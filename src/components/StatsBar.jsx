@@ -10,7 +10,7 @@ export default function StatsBar({ stats, prevStats }) {
       {/* Avatar */}
       <div className="shrink-0 rounded-[40px] overflow-hidden border-3 border-white/20"
         style={{ width: 72, height: 72, background: '#8c9cf2' }}>
-        <img src="assets/avatar.png" className="w-full h-full object-cover" alt="avatar" />
+        <img src={`${import.meta.env.BASE_URL}assets/avatar.png`} className="w-full h-full object-cover" alt="avatar" />
       </div>
 
       {/* Stat bars */}

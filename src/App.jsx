@@ -136,7 +136,7 @@ export default function App() {
         {/* Stats bar */}
         <div
           className="absolute z-20"
-          style={{ left: 34, top: 24, maxWidth: 'calc(100% - 68px)' }}
+          style={{ left: '50%', top: 40, transform: 'translateX(-50%)' }}
         >
           <StatsBar stats={stats} prevStats={prevStats} />
         </div>
