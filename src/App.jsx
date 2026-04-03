@@ -137,7 +137,7 @@ export default function App() {
   } else if (step === 'step2_1' || step === 'step2_2' || step === 'step2_3') {
     cardIds = STEP_CARDS[step];
   } else if (step === 'step3') {
-    cardIds = STEP3_FAMILIES[step3Family] || [];
+    cardIds = STEP3_FAMILIES[`${step2Branch}_${step3Family}`] || [];
   }
 
   const isResult = step === 'step4';

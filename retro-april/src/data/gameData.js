@@ -6,12 +6,48 @@ export const INITIAL_STATS = { stress: 2, quality: 2, speed: 2 };
 export const MAX_STAT = 5;
 export const MIN_STAT = 0;
 
+// Step titles shown in the header
+export const STEP_TITLES = {
+  step1:   { step: '1', title: 'разбитые яйца' },
+  step2_1: { step: '2', title: 'гонка за временем' },
+  step2_2: { step: '2', title: 'разобраться с причинами' },
+  step2_3: { step: '2', title: 'гонка за временем' },
+  step4:   { step: '4', title: 'финал' },
+};
+
+// Step 3 title depends on the combination of step2Branch + step3Family chosen
+export const STEP3_TITLES = {
+  '1_1': 'работа на износ',
+  '1_2': 'сделать меньше',
+  '1_3': 'сделать самое главное',
+  '2_1': 'успокоится и все обдумать',
+  '2_2': 'решить на основе опыта',
+  '2_3': 'посовещаться с другом',
+  '3_1': 'положиться на помощника',
+  '3_2': 'делать параллельно',
+  '3_3': 'синхронизироваться',
+};
+
+// Card subtitle labels shown above cards
+export const CARD_SUBTITLES = {
+  step1:   ['Карточка 1.1', 'Карточка 1.2', 'Карточка 1.3'],
+  step2:   ['Карточка 2.1', 'Карточка 2.2', 'Карточка 2.3'],
+  step3:   ['Карточка 3.1', 'Карточка 3.2', 'Карточка 3.3'],
+  step4:   ['Результат 1',  'Результат 2',  'Результат 3'],
+};
+
 // Card positions and rotations (matching Figma layout)
 // Slightly lower than original Figma to clear the taller title + stats header stack
 export const CARD_LAYOUT = [
   { left: 33,  top: 213, rotate: -1.83 },
   { left: 437, top: 280, rotate:  2.04 },
   { left: 847, top: 239, rotate:  0.19 },
+];
+
+export const RESULT_CARD_LAYOUT = [
+  { left: 33,  top: 196, rotate: -1.5 },
+  { left: 448, top: 197, rotate:  0   },
+  { left: 862, top: 196, rotate:  1.5 },
 ];
 
 // ─────────────────────────────────────────────
@@ -398,6 +434,7 @@ export const CARDS = {
   },
 
   // ── STEP 3 — Branch 2, Family 3 (посовещаться с другом) ──
+  // node-id: 112-2382
   s3b2f3_1: {
     bg: '#3cda83',
     title: 'Разделить дела',
@@ -439,6 +476,7 @@ export const CARDS = {
   },
 
   // ── STEP 3 — Branch 3, Family 1 (положиться на помощника) ──
+  // node-id: 115-2796
   s3b3f1_1: {
     bg: '#3cda83',
     title: 'Обсудить время',
@@ -480,6 +518,7 @@ export const CARDS = {
   },
 
   // ── STEP 3 — Branch 3, Family 2 (делать параллельно) ──
+  // node-id: 118-3030
   s3b3f2_1: {
     bg: '#3cda83',
     title: 'Главная цель достигнута',
@@ -521,6 +560,7 @@ export const CARDS = {
   },
 
   // ── STEP 3 — Branch 3, Family 3 (синхронизироваться) ──
+  // node-id: 122-3125
   s3b3f3_1: {
     bg: '#3cda83',
     title: 'Выстраивать обратную связь',
@@ -564,8 +604,8 @@ export const CARDS = {
 
 // ─────────────────────────────────────────────
 // STEP 3 CARD FAMILIES
-// ─────────────────────────────────────────────
 // Key: `${step2Branch}_${step3Family}` — 9 unique screens
+// ─────────────────────────────────────────────
 export const STEP3_FAMILIES = {
   '1_1': ['s3b1f1_1', 's3b1f1_2', 's3b1f1_3'],
   '1_2': ['s3b1f2_1', 's3b1f2_2', 's3b1f2_3'],
@@ -623,6 +663,9 @@ export const RESULT_CARDS = {
     sparkleImg: 'https://www.figma.com/api/mcp/asset/5955f6c2-b531-4a02-8859-6abf24b9c0e8',
   },
 };
+
+// Result order on screen (left to right)
+export const RESULT_ORDER = ['bad', 'medium', 'good'];
 
 // ─────────────────────────────────────────────
 // SCORE → RESULT

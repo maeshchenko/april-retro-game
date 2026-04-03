@@ -20,7 +20,7 @@ function TagIcon({ isPlus }) {
   );
 }
 
-export default function GameCard({ card, cardKey, onClick, style = {}, disabled }) {
+export default function GameCard({ card, cardKey, subtitle, onClick, style = {}, disabled }) {
   const [hovered, setHovered] = useState(false);
   const [pressed, setPressed] = useState(false);
 
@@ -58,6 +58,13 @@ export default function GameCard({ card, cardKey, onClick, style = {}, disabled 
       onMouseDown={() => !disabled && setPressed(true)}
       onMouseUp={handleClick}
     >
+      {subtitle && (
+        <div className="absolute text-black/60 font-medium text-[14px]"
+          style={{ top: -34, left: 0, width: '100%', textAlign: 'left' }}>
+          {subtitle}
+        </div>
+      )}
+
       {/* Card — original Figma flex-wrap layout */}
       <div
         className="relative overflow-hidden rounded-[40px]"
@@ -114,7 +121,7 @@ export default function GameCard({ card, cardKey, onClick, style = {}, disabled 
         </div>
 
         {/* Tags — pinned absolutely to card bottom so they never get pushed out */}
-        <div className="absolute flex gap-2 items-center justify-center" style={{ bottom: 5, left: 32, right: 32 }}>
+        <div className="absolute flex gap-2 items-center" style={{ bottom: 28, left: 32 }}>
           {card.tags.map((tag, i) => {
             const meta = STAT_META[tag.stat];
             return (
