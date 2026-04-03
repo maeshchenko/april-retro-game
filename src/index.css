@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow: hidden;
+  background: #b7eeff;
+}
+
+@layer utilities {
+  .game-bg {
+    background: radial-gradient(ellipse at 50% 50%, #eafaff 0%, #b7eeff 100%);
+  }
+}
