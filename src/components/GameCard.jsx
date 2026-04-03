@@ -114,7 +114,7 @@ export default function GameCard({ card, cardKey, onClick, style = {}, disabled 
         </div>
 
         {/* Tags — pinned absolutely to card bottom so they never get pushed out */}
-        <div className="absolute flex gap-2 items-center" style={{ bottom: 28, left: 32 }}>
+        <div className="absolute flex gap-2 items-center justify-center" style={{ bottom: 28, left: 32, right: 32 }}>
           {card.tags.map((tag, i) => {
             const meta = STAT_META[tag.stat];
             return (
